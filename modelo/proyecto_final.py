@@ -51,7 +51,7 @@ import joblib
 '''
 Ingesta de datos
 '''
-ruta = "C:/Users/heber/Downloads/oasis_longitudinal_demographics-8d83e569fa2e2d30 (1).xlsx"
+ruta = "modelo/oasis_longitudinal_demographics-8d83e569fa2e2d30.xlsx"
 # dataset para el dataset_150
 oasis = pd.read_excel (ruta)
 # dataset para el dataset_373

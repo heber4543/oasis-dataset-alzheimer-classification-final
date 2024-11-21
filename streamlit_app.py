@@ -3,14 +3,14 @@ import streamlit as st
 import joblib
 import pandas as pd
 # cargar el pipeline
-preprocessor = joblib.load('pipeline_373.pkl')
+preprocessor = joblib.load('modelo/archivos/pipeline_373.pkl')
 # cargar los modelos
-lr_150 = joblib.load('best_lr_model_150.pkl')
-lr_373 = joblib.load('best_lr_model_373.pkl')
-svm_150 = joblib.load('best_svm_model_150.pkl')
-svm_373 = joblib.load('best_svm_model_373.pkl')
-rf_150 = joblib.load('best_rf_model_150.pkl')
-rf_373 = joblib.load('best_rf_model_373.pkl')
+lr_150 = joblib.load('modelo/archivos/best_lr_model_150.pkl')
+lr_373 = joblib.load('modelo/archivos/best_lr_model_373.pkl')
+svm_150 = joblib.load('modelo/archivos/best_svm_model_150.pkl')
+svm_373 = joblib.load('modelo/archivos/best_svm_model_373.pkl')
+rf_150 = joblib.load('modelo/archivos/best_rf_model_150.pkl')
+rf_373 = joblib.load('modelo/archivos/best_rf_model_373.pkl')
 # titulo
 st.title("OASIS DATASET - ALZHEIMER PREDICTION")
 # descripcion del dataset
@@ -36,16 +36,16 @@ and d) SVM trained with 373 patients.
 st.markdown(app)
 # entradas del usuario
 st.subheader("ENTER YOUR DATA")
-mr_delay = st.number_input("MR Delay")
-age = st.number_input("Age")
-educ = st.number_input("Years of Education")
-ses = st.number_input("Socioeconomic Status")
-mmse = st.number_input("Mini-Mental State Examination Score")
-cdr = st.number_input("Clinical Dementia Rating")
-etiv = st.number_input("Estimated Total Intracranial Volume")
-nwbv = st.number_input("Normalized Whole-Brain Volume")
-sex = st.selectbox("Sex", ['M', 'F'])
-asf = st.number_input("Atlas Scaling Factor")
+mr_delay = st.number_input("MR Delay", value = 576)
+age = st.number_input("Age", value = 69)
+educ = st.number_input("Years of Education", value = 12)
+ses = st.number_input("Socioeconomic Status", value = 2)
+mmse = st.number_input("Mini-Mental State Examination Score", value = 24)
+cdr = st.number_input("Clinical Dementia Rating", value = 0.5)
+etiv = st.number_input("Estimated Total Intracranial Volume", value = 1480)
+nwbv = st.number_input("Normalized Whole-Brain Volume", value = 0.791)
+sex = st.selectbox("Sex", ['M', 'F'], index=0)
+asf = st.number_input("Atlas Scaling Factor", value = 1.186)
 # crear dataFrame con las entradas del usuario
 input_df = pd.DataFrame({
     'MR Delay': [mr_delay],
