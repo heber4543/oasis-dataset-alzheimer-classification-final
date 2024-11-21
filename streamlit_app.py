@@ -26,12 +26,16 @@ st.markdown(descripcion)
 # descripcion de la implementacion
 st.subheader("IMPLEMENTATION")
 app = """
-This app implements two classification models: Support Vector Machine (SVM) and Logistic Regression. 
-The same dataset is used in two variations: the first variation includes only the first visit of each patient, 
-as reported in the literature (150 patients). The second variation treats each visit as a distinct patient, 
-resulting in a total of 373 patients. Consequently, there are four models: a) Logistic Regression trained 
-with 150 patients, b) Logistic Regression trained with 373 patients, c) SVM trained with 150 patients, 
-and d) SVM trained with 373 patients.
+This app implements six classification models: Support Vector Machine (SVM), Logistic Regression, and Random Forest.
+The same dataset is used in two variations: the first variation includes only the first visit of each patient, as reported in the literature (150 patients). The second variation treats each visit as a distinct patient, resulting in a total of 373 patients.
+
+Consequently, the six models are:
+a) Logistic Regression trained with 150 patients,
+b) Logistic Regression trained with 373 patients,
+c) SVM trained with 150 patients,
+d) SVM trained with 373 patients,
+e) Random Forest trained with 150 patients, and
+f) Random Forest trained with 373 patients.
 """
 st.markdown(app)
 # entradas del usuario
